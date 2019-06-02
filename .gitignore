@@ -1,3 +1,5 @@
 win10/kubectl.exe
 win10/minikube.exe
 win10/Virtual*
+*exe
+
