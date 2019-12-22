@@ -8,7 +8,7 @@
 + minikube start
 + minikube dashboard
 + minikube status
-
++ minikube service (runs the service at local client)
 
 - clean up
 + minikube stop    
@@ -18,6 +18,7 @@
 + minikube addons enable heapster
 + minikube addons disable heapster
 ```
+
 ### Kubernetes
 ```diff
 - deployment
@@ -29,6 +30,7 @@ kubectl expose deployment/kubernetes-cockpit
 
 + kubectl create -f kubernetes-cockpit.json
 + kubectl get service kubernetes-cockpit
++ minikube service kubernetes-cockpit
 
 + kubectl create deployment hello-node --image=gcr.io/hello-minikube-zero-install/hello-node
 + kubectl get deployments   -- view deployment status
@@ -78,6 +80,8 @@ You cannot have Type-1 or Type-2 hypervisors running at the same time on your ma
 + kubectl run nginx — image nginx
 + kubectl expose deployment nginx — port 80 — target-port 80 — name nginx
 + kubectl get pods
-
+ 
++ kubectl config set-credentials cluster2 --username=admin --password=uXFGweU9l35qcif
++ kubectl config set-credentials minikube --username=admin --password=uXFGweU9l35qcif
 
 ```
